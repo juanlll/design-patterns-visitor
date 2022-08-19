@@ -1,4 +1,4 @@
-import { Student } from '../Elements/Student';
+import { Student } from './Student';
 import { Visitor } from '../Visitors/Visitor';
 
 export abstract class StudentWithAccept extends Student {

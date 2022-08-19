@@ -1,7 +1,7 @@
 import { SchoolStudent } from '../Elements/SchoolStudent';
 import { Qualification } from '../Elements/Student';
 import { UniversityStudent } from '../Elements/UniversityStudent';
-import { Visitor } from '../Visitors/Visitor';
+import { Visitor } from './Visitor';
 export class VisitorFinalGradeUCC implements Visitor<number> {
   public visitSchoolStudent(student: SchoolStudent): number {
     return (

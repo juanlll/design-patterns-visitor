@@ -1,4 +1,4 @@
-import { Person } from '../Person';
+import { Person } from '../../Person';
 export interface Qualification {
   className: string;
   weight: number;
@@ -15,8 +15,16 @@ export class Student {
     this.finalQualifications = qualifications;
   }
 
+  public getAge() {
+    return this.person.age;
+  }
+
   public getFinalQualifications(): Array<Qualification> {
     return this.finalQualifications;
+  }
+
+  public getName() {
+    return `[${this.constructor.name}] ${this.person.name}`;
   }
 
   public getTotalWeight(): number {
@@ -26,13 +34,5 @@ export class Student {
       },
       0
     );
-  }
-
-  public getName() {
-    return `[${this.constructor.name}] ${this.person.name}`;
-  }
-
-  public getAge() {
-    return this.person.age;
   }
 }

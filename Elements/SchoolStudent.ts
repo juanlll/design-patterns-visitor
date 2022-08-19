@@ -1,4 +1,4 @@
-import { StudentWithAccept } from '../Elements/StudentWithAccept';
+import { StudentWithAccept } from './StudentWithAccept';
 import { Visitor } from '../Visitors/Visitor';
 
 export class SchoolStudent extends StudentWithAccept {

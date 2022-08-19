@@ -1,17 +1,9 @@
 import { SchoolStudent } from '../Elements/SchoolStudent';
-import { Qualification, Student } from '../Elements/Student';
+import { Qualification } from '../Elements/Student';
 import { UniversityStudent } from '../Elements/UniversityStudent';
-import { Visitor } from '../Visitors/Visitor';
+import { Visitor } from './Visitor';
 export class VisitorFinalGradeBasic implements Visitor<number> {
-  public visitSchoolStudent(student: SchoolStudent): number {
-    return this.calculate(student);
-  }
-
-  public visitUniversityStudent(student: UniversityStudent): number {
-    return this.calculate(student);
-  }
-
-  private calculate(student: Student) {
+  private calculate(student: SchoolStudent | UniversityStudent) {
     return (
       student
         .getFinalQualifications()
@@ -19,5 +11,13 @@ export class VisitorFinalGradeBasic implements Visitor<number> {
           return acc + qualification.value * qualification.weight;
         }, 0) / student.getTotalWeight()
     );
+  }
+
+  public visitSchoolStudent(student: SchoolStudent): number {
+    return this.calculate(student);
+  }
+
+  public visitUniversityStudent(student: UniversityStudent): number {
+    return this.calculate(student);
   }
 }
