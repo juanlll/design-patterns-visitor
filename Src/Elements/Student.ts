@@ -15,7 +15,7 @@ export class Student {
     this.finalQualifications = qualifications;
   }
 
-  public getAge() {
+  public getAge():string {
     return this.person.age;
   }
 
@@ -23,7 +23,7 @@ export class Student {
     return this.finalQualifications;
   }
 
-  public getName() {
+  public getName():string {
     return `[${this.constructor.name}] ${this.person.name}`;
   }
 
